@@ -1,0 +1,232 @@
+@mixin display-grid {
+  display: -ms-grid;
+  display: grid;
+}
+
+#root {
+  color: #4f2e2d;
+  font-family: Arimo;
+  .active {
+    color: #50b54d;
+  }
+  h1 {
+    grid-row: 3;
+    text-align: center;
+    font-size: 5vw;
+    font-weight: 500;
+    @media only screen and (min-width: 370px) {
+      grid-column: 2/4;
+      font-size: 1.9vw;
+      margin-bottom: 0px;
+    }
+  }
+  nav {
+    margin: 0 auto;
+    @media only screen and (min-width: 370px) {
+      position: absolute;
+      top: 300px;
+      left: 80vw;
+    }
+
+    ul {
+      font-size: 25pt;
+      @media only screen and (max-width: 370px) {
+        padding: 5px;
+      }
+      li {
+        list-style: none;
+        cursor: pointer;
+        @media only screen and (max-width: 370px) {
+          display: inline-block;
+          font-size: 17pt;
+          padding: 5px;
+        }
+
+        a {
+          text-decoration: none;
+          color: #4f2e2d;
+        }
+        a:hover {
+          color: #999b98;
+        }
+      }
+    }
+  }
+  .logo {
+    width: 150px;
+    grid-row: 2;
+    margin: 0 auto;
+
+    @media screen and(min-width:370px) {
+      grid-column: 1/5;
+      width: 250px;
+      margin: 25px auto 0 auto;
+    }
+    .logoImage {
+      width: 150px;
+      @media screen and(min-width:370px) {
+        width: 250px;
+      }
+    }
+    .logoText {
+      font-size: 13pt;
+      @media screen and(min-width:370px) {
+        font-size: 17pt;
+      }
+      margin: 0 auto 0 auto;
+      color: #50b54d;
+      text-align: center;
+    }
+  }
+  .home {
+    @include display-grid;
+    grid-template-rows: repeat(4, auto);
+    @media only screen and (min-width: 370px) {
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 15px;
+    }
+
+    video {
+      margin: 0 auto 0 auto;
+      width: 95%;
+      grid-row: 4;
+      @media only screen and (min-width: 370px) {
+        grid-column: 2/4;
+        width: 70%;
+        height: 23vw;
+      }
+    }
+  }
+  .process {
+    grid-template-rows: repeat(4, auto);
+    @include display-grid;
+    grid-gap: 15px;
+    @media only screen and (min-width: 370px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .video {
+      grid-row: 4;
+      text-align: center;
+      @media only screen and (min-width: 370px) {
+        grid-column: 2/4;
+      }
+      iframe {
+        width: 90%;
+        height: 56vw;
+        @media only screen and (min-width: 370px) {
+          width: 70%;
+          height: 23vw;
+        }
+      }
+      h3 {
+        text-align: left;
+        font-weight: 500;
+        @media only screen and (min-width: 370px) {
+          width: 70%;
+          margin: 12px auto;
+        }
+      }
+    }
+  }
+  .gallery-container {
+    grid-template-rows: repeat(4, auto);
+    @include display-grid;
+    grid-gap: 15px;
+    @media only screen and (min-width: 370px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .carousel {
+      grid-row: 4;
+      position: relative;
+      margin: 0 auto;
+      display: block;
+      @media only screen and (min-width: 370px) {
+        width: 90%;
+        grid-column: 2/4;
+      }
+      img {
+        margin: 0 auto;
+        transition: all 1s ease-in-out;
+        width: 100%;
+      }
+
+      .slide-arrow {
+        cursor: pointer;
+        position: fixed;
+        font-size: 3rem;
+        top: 65%;
+        z-index: 100;
+        color: #353534;
+        @media only screen and (min-width: 370px) {
+          font-size: 5rem;
+          top: 55%;
+          color: #999b98;
+        }
+      }
+
+      .slide-arrow.right {
+        right: 2%;
+        @media only screen and (min-width: 370px) {
+          right: 23%;
+        }
+      }
+
+      .slide-arrow.left {
+        left: 2%;
+        @media only screen and (min-width: 370px) {
+          left: 23%;
+        }
+      }
+    }
+  }
+  .team {
+    position: relative;
+    @include display-grid;
+    grid-template-rows: repeat(4, auto);
+    grid-gap: 15px;
+    @media only screen and (min-width: 370px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .profiles {
+      grid-row: 4;
+      padding: 10px;
+      @media only screen and (min-width: 370px) {
+        grid-column: 2/4;
+      }
+      .profile {
+        position: relative;
+        img {
+          margin: 0 auto;
+          width: 100px;
+          display: block;
+          @media only screen and (min-width: 370px) {
+            margin-top: 50px;
+            width: 200px;
+            display: inline-block;
+          }
+        }
+        h3 {
+          font-weight: 500;
+          @media only screen and (min-width: 370px) {
+            width: 70%;
+            display: inline-block;
+            position: absolute;
+            top: 35%;
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+    nav {
+      margin: 0 auto;
+      @media only screen and (min-width: 370px) {
+        position: absolute;
+        top: 292px;
+        left: 79.5vw;
+      }
+    }
+  }
+}
